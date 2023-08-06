@@ -1,6 +1,6 @@
 package com.example.redwardDI.controllers;
 
-import com.example.redwardDI.services.GreetingServiceImpl;
+import com.example.redwardDI.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,7 @@ class SetterInjectedControllerTest {
         controller= new SetterInjectedController();
         // ojo aki como se injecta siempre la impl!
         // con new pero esta vez con setter
-        controller.setGreetingService(new GreetingServiceImpl());
+        controller.setGreetingService(new ConstructorGreetingService());
     }
 
     @Test

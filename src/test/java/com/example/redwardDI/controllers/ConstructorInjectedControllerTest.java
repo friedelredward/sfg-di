@@ -1,6 +1,6 @@
 package com.example.redwardDI.controllers;
 
-import com.example.redwardDI.services.GreetingServiceImpl;
+import com.example.redwardDI.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ class ConstructorInjectedControllerTest {
     @BeforeEach
     void setUp() {
         //best method
-        controller= new ConstructorInjectedController(new GreetingServiceImpl());
+        controller= new ConstructorInjectedController(new ConstructorGreetingService());
     }
 
     @Test
