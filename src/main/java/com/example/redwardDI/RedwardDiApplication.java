@@ -1,9 +1,6 @@
 package com.example.redwardDI;
 
-import com.example.redwardDI.controllers.ConstructorInjectedController;
-import com.example.redwardDI.controllers.ManualPropertyInjectedController;
-import com.example.redwardDI.controllers.MyController;
-import com.example.redwardDI.controllers.SetterInjectedController;
+import com.example.redwardDI.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -34,6 +31,10 @@ public class RedwardDiApplication {
 
 		ConstructorInjectedController constructorController= (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructorController.getGreeting());
+
+		/*i18N*/
+		I18nController i18nController= (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayGreeting());
 	}
 
 }
