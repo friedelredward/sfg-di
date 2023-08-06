@@ -1,6 +1,6 @@
 package com.example.redwardDI.controllers;
 
-import com.example.redwardDI.services.GreetingServiceImpl;
+import com.example.redwardDI.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ class ManualPropertyInjectedControllerTest {
     @BeforeEach
     void setUp() {
         controller= new ManualPropertyInjectedController();
-        controller.greetingService= new GreetingServiceImpl();
+        controller.greetingService= new ConstructorGreetingService();
     }
 
     @Test
