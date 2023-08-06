@@ -1,5 +1,6 @@
 package com.example.redwardDI.controllers;
 
+import com.example.redwardDI.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -7,8 +8,13 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class MyController {
+    private final GreetingService greetingService;
+
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
     public String sayHello(){
-        System.out.println("helloWorld in Console");
-        return "Holamundo";
+        return greetingService.sayHello();
     }
 }

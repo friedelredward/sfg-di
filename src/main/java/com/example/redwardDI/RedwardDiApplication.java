@@ -19,8 +19,7 @@ public class RedwardDiApplication {
 		MyController controller= (MyController) ctx.getBean("myController");
 		//now iu can use it pej:
 
-		String greeting=controller.sayHello(); //without even having endpoint!! remember __invoke
-		System.out.println(greeting);
+		System.out.println(controller.sayHello());// this is primary bean now
 
 		//no webserver just stops!! lightweight spring ;)
 
