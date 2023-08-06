@@ -7,7 +7,8 @@ import org.springframework.stereotype.Service;
  * Created by r.edward on {06/08/2023}
  */
 /*after this a profile must always be active or spring wont know which to instantiate!!*/
-@Profile("ES")
+    /*unless defualt profile is used (it's always there)*/
+@Profile({"ES", "default"})
 @Service("i18nService")
 public class I18nESGreetingService implements GreetingService {
     @Override
