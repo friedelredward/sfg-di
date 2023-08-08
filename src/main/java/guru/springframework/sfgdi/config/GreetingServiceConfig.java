@@ -14,6 +14,11 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 public class GreetingServiceConfig {
 
+    /** this override is very necessary
+     * cause the english service bean name
+     * so at runtime really gets the default
+     * if not specified= not english
+     */
     @Profile({"ES", "default"})
     @Bean("i18nService")
     I18NSpanishService i18NSpanishService(){
