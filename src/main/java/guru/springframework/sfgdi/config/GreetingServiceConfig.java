@@ -5,14 +5,13 @@ import com.springframework.pets.PetServiceFactory;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepository;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.sfgdi.services.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 
 /**
  * Created by jt on 2/20/21.
+ * //this annotation can also go on the main class since it's counts also as config class
  */
+@ImportResource("classpath:redward-service-config.xml")
 @Configuration
 public class GreetingServiceConfig {
 
@@ -55,11 +54,12 @@ public class GreetingServiceConfig {
     PrimaryGreetingService primaryGreetingService(){
         return new PrimaryGreetingService();
     }
-
-    @Bean
+/*we will unable this 1 and inject it from xml*/
+//    @Bean
     ConstructorGreetingService constructorGreetingService(){
         return new ConstructorGreetingService();
     }
+    /*as we see after we comment bean it doesn't count as used*/
 
     @Bean
     PropertyInjectedGreetingService propertyInjectedGreetingService(){
