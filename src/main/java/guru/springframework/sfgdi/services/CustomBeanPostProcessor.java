@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CustomBeanPostProcessor implements BeanPostProcessor {
-    @Override
+/*    @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
 
         if(bean instanceof LifeCycleDemoBean){
@@ -15,7 +15,7 @@ public class CustomBeanPostProcessor implements BeanPostProcessor {
         }
 
         return bean;
-    }
+    }*/
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
