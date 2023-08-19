@@ -2,22 +2,21 @@ package guru.springframework.sfgdi.config;
 
 import com.springframework.pets.PetService;
 import com.springframework.pets.PetServiceFactory;
-import guru.springframework.sfgdi.datasource.FakeDataSource;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepository;
 import guru.springframework.sfgdi.repositories.EnglishGreetingRepositoryImpl;
 import guru.springframework.sfgdi.services.*;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 
 /**
- * Created by jt on 2/20/21.
  * //this annotation can also go on the main class since it's counts also as config class
  */
+@EnableConfigurationProperties(ConstructorConfigProperties.class)
 @ImportResource("classpath:redward-service-config.xml")
 @Configuration
 public class GreetingServiceConfig {
 
-    @Bean
+   /* @Bean
     FakeDataSource fakeDataSource(
             @Value("${example.redwardDI.username}")String username,
             @Value("${example.redwardDI.password}") String password,
@@ -27,7 +26,7 @@ public class GreetingServiceConfig {
         fakeDataSource.setPassword(password);
         fakeDataSource.setJdbcUrl(jdbcurl);
         return fakeDataSource;
-    }
+    }*/
 
     @Bean
     PetServiceFactory petServiceFactory(){

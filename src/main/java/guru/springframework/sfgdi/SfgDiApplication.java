@@ -1,5 +1,6 @@
 package guru.springframework.sfgdi;
 
+import guru.springframework.sfgdi.config.ConstructorConfigProperties;
 import guru.springframework.sfgdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -37,6 +38,12 @@ public class SfgDiApplication {
 		System.out.println("-------- Constructor" );
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructorInjectedController.getGreeting());
+
+		System.out.println("--------- Config Props Bean");
+		ConstructorConfigProperties constructorConfigProperties = ctx.getBean(ConstructorConfigProperties.class);
+		System.out.println(constructorConfigProperties.getUsername());
+		System.out.println(constructorConfigProperties.getPassword());
+		System.out.println(constructorConfigProperties.getJdbcUrl());
 	}
 
 }
